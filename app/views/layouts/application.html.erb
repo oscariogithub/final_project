@@ -4,153 +4,206 @@
     <title>FinalProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+      <!-- Bootstrap core CSS -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Material Design Bootstrap -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-
-  <div class="">
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="<%=root_path%>">Home</a>        
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<%=new_user_registration_path%>">Registrate</a>
-      </li>
-    
-       <li class="nav-item">
-        <a class="nav-link" href="<%=new_user_session_path%>">Inicia Sesión</a>
-      </li>
       
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+  <div class = "jumbotron margincero paddinglow text-center">
+      <img src="http://oi63.tinypic.com/2lvb5g5.jpg" width="170px" class="pull-right paddinglow">
   </div>
-</nav>
 
-<div class="container">
-  <div class="row" style= "text-align:center">
-    <div class="col-3" style= "padding:0px">
-      <button type="button" class="btn btn-secondary btn-lg btn-block whitetext">Reserva En Linea</button>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark cyan darken-1">
+    <a class="navbar-brand" href="#"><strong>Navbar</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="<%=root_path%>"><strong>I n i c i o</strong><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%=tratamientos_path%>"><strong>Tratamientos</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%=convenios_path%>"><strong>Convenios</strong></a>
+            </li>
+      </ul>
+      <ul class="navbar-nav mr-right">
+            <li class="nav-item">
+                <%= link_to "Regístrate", new_user_registration_path, class: 'btn btn-outline-light', method: :get %>
+                <%= link_to "Ingresa", new_user_session_path, class: 'btn btn-outline-light', method: :get %>
+            </li>
+      </ul>
     </div>
-     <div class="col-3" style= "padding:0px">
-      <button type="button" class="btn btn-secondary btn-lg btn-block whitetext"><%= link_to "Tratamientos", tratamientos_path %></button>
-    </div>
-    <div class="col-3" style= "padding:0px">
-      <button type="button" class="btn btn-secondary btn-lg btn-block whitetext"><%= link_to "Convenios", convenios_path %></button>
-    </div>
-    <div class="col-3" style= "padding:0px">
-      <button type="button" class="btn btn-secondary btn-lg btn-block whitetext"><%= link_to "Contacto", contactos_path %></button>
-    </div>
+  </nav>
+
+
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     
-  </div>
-</div>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
 
 
     <%= yield %>
     <br>
-    <footer class="page-footer font-small blue pt-4 bg-dark whitetext">
 
- 
-                <div class="container-fluid text-center text-md-left">
-              
-                  
-                  <div class="row">
-              
-                  
-                <div class="col-md-4 mt-md-0 mt-3">
-              
-                      
-                      <h4 class="text-uppercase">Visita Nuestro Facebook:</h4>
-                     
-                      <h4 class="text-uppercase">Teléfono:</h4>
-                      <h6>+569 99999999</h6>
-              
-                    </div>
-                  
-                 <div class="col-md-3 mb-md-0 mb-3">
+        <footer class="page-footer font-small unique-color-dark">
 
-          
-                      <h5 class="text-uppercase">Nos ubicamos en:</h5>
-            
-                      <ul class="list-unstyled">
-                        <li>
-                         
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13317.201007421481!2d-70.6345833!3d-33.4414832!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1b8a92ab14abf654!2sDesaf%C3%ADo+Latam+-+Baquedano!5e0!3m2!1ses-419!2scl!4v1561700821134!5m2!1ses-419!2scl" width=100px height=100px>
-                          </iframe>
-                        </li>
-                      </ul>
-            
-                    </div>
-                    
-            
-                    
-                    <div class="col-md-3 mb-md-0 mb-3">
-            
-                      
-                      <h5 class="text-uppercase">Formulario</h5>
-            
-                      <form>
-                        Nombre:
-                        <br>
-                        <input type="text"> 
-                        <br>
-                        Correo:
-                        <br>
-                        <input type="text"> 
-                        <br>
-                        <input type="submit">
-                      
+          <div style="background-color:#00acc1;">
+            <div class="container">
 
-                      </form>
-            
-                    </div>
-                    
-            
+              
+              <div class="row py-4 d-flex align-items-center">
+
+               
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                  <h6 class="mb-0"></h6>
                 </div>
-                
-            
+               
+                <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                  <!-- Facebook -->
+                  <a class="fb-ic">
+                    <i class="fab fa-facebook-f white-text mr-4"> </i>
+                  </a>
+                  <!-- Twitter -->
+                  <a class="tw-ic">
+                    <i class="fab fa-twitter white-text mr-4"> </i>
+                  </a>
+                  <!-- Google +-->
+                  <a class="gplus-ic">
+                    <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                  </a>
+                  <!--Linkedin -->
+                  <a class="li-ic">
+                    <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                  </a>
+                  <!--Instagram-->
+                  <a class="ins-ic">
+                    <i class="fab fa-instagram white-text"> </i>
+                  </a>
+
+                </div>
+                <!-- Grid column -->
+
               </div>
-                
-               <div class="footer-copyright text-center py-3">© 2019 Copyright:
-                  <a href="https://mdbootstrap.com/education/bootstrap/"> Desafío Latam</a>
-                </div>
-                
+              <!-- Grid row-->
+
+            </div>
+          </div>
+
+          <!-- Footer Links -->
+          <div class="container text-center text-md-left mt-5">
+
+            <!-- Grid row -->
+            <div class="row mt-3">
+
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                <!-- Content -->
+                <h6 class="text-uppercase font-weight-bold">Clinica Dentix</h6>
+                <hr class="cyan darken-1 accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>Consulta por horas disponibles y reserva tu hora. Presupuesto Gratis</p>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Especialidades</h6>
+                <hr class="cyan darken-1 accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                  <a href="#!">Endodoncia</a>
+                </p>
+                <p>
+                  <a href="#!">Periodoncia</a>
+                </p>
+                <p>
+                  <a href="#!">Odontopediatria</a>
+                </p>
+                <p>
+                  <a href="#!">Rehabilitación Oral</a>
+                </p>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Horarios</h6>
+                <hr class="cyan darken-1 accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                  <a href="#!">De lunes a Viernes</a>
+                </p>
+                <p>
+                  <a href="#!">De 9:00 a 19:00hrs</a>
+                </p>
               
-              </footer>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+                <hr class="cyan darken-1 accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                  <i class="fas fa-home mr-3"></i> San Isidro 435, Santiago</p>
+                <p>
+                  <i class="fas fa-envelope mr-3"></i> contacto@dentix.cl</p>
+                <p>
+                  <i class="fas fa-phone mr-3"></i> + 569 97667731</p>
+                <p>
+                  <i class="fas fa-print mr-3"></i> + 52 4725944</p>
+
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+          </div>
+          <!-- Footer Links -->
+
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+          </div>
+          <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+  
+
     
+      <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/js/mdb.min.js"></script>
     
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
-  </div>
+ 
 </html>
